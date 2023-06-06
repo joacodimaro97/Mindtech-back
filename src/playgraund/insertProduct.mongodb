@@ -1,0 +1,15 @@
+use("products")
+
+db.product.insertOne({
+    name:"",
+    category:"",
+    price:"",
+    brand:"",
+    description:"",
+    specifications:"",
+    existence:"",
+    images:[{
+        card:"",
+        carrousel:"",
+    }],
+    })
