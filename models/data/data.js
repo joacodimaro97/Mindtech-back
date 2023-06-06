@@ -1,5 +1,5 @@
 import "dotenv/config.js";
-import "../../configs/database.js";
+import "../../config/database.js";
 
 import { users } from "./users.js";
 import User from "../User.js";
