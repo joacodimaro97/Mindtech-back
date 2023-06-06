@@ -1,6 +1,3 @@
-import "dotenv/config.js";
-import "./config/database.js";
-
 import createError from "http-errors";
 import express from "express";
 import path from "path";
@@ -8,6 +5,8 @@ import cookieParser from "cookie-parser";
 import logger from "morgan";
 import { __dirname } from "./utils.js";
 
+import "dotenv/config.js";
+import "./config/database.js";
 
 import indexRouter from "./routes/index.js";
 
