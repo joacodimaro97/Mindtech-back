@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose";
 
 let schema = new Schema(
   {
-    user: {
+    name: {
       type: String,
       required: true,
     },
@@ -15,13 +15,22 @@ let schema = new Schema(
       type: String,
       required: true,
     },
+    is_online: {
+      type: Boolean,
+      required: true,
+    },
+    role: {
+      type: Number,
+      required: true,
+    },
   },
   {
     timestamps: true,
   }
 );
 
+let collection = "users";
 
-let User = model("users", schema);
+let User = model(collection, schema);
 
 export default User;

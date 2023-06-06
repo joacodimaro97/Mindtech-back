@@ -1,11 +1,14 @@
-import User from "../User.js";
-import { users } from "./users.js";
+import "dotenv/config.js";
+import "../../config/database.js";
 
-let newUsers = async(users) => await User.insertMany(users)
+import { users } from "./users.js";
+import User from "../User.js";
+
+let newUser = async (users) => await User.insertMany(users);
 
 let data = async () => {
-  await newUsers(users)
-  console.log('done!')
-}
+  await newUser(users);
+  console.log("✅ Database uploaded successfully");
+};
 
-data()
+data();
