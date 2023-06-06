@@ -8,7 +8,7 @@ let newUser = async (users) => await User.insertMany(users);
 
 let data = async () => {
   await newUser(users);
-  console.log("✅ Database uploaded successfully");
+  console.log("Database uploaded successfully");
 };
 
 data();
