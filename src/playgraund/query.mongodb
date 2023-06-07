@@ -1,3 +1,0 @@
-use("users")
-
-db.user.find()
