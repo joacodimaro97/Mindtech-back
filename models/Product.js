@@ -11,7 +11,7 @@ let schema = new Schema(
       type: String,
       required: true,
     },
-    photo: {
+    images: {
       type: String,
       required: true,
     },
