@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model, Types } from "mongoose";
 
 let schema = new Schema(
   {
@@ -16,11 +16,13 @@ let schema = new Schema(
       required: true,
     },
     category: {
-      type: String,
+      type: Types.ObjectId,
+      ref: "categories",
       required: true,
     },
     brand: {
-      type: String,
+      type: Types.ObjectId,
+      ref: "brands",
       required: true,
     },
     price: {
