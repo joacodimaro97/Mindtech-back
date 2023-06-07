@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 
-let schema = new Schema(
+const schema = new Schema(
   {
     name: {
       type: String,
@@ -23,14 +23,18 @@ let schema = new Schema(
       type: Boolean,
       required: true,
     },
+    is_verified: {
+      type: Boolean,
+    },
+    verificationCode: {
+      type: Number,
+    },
   },
   {
     timestamps: true,
   }
 );
 
-let collection = "users";
-
-let User = model(collection, schema);
+const User = model("User", schema);
 
 export default User;

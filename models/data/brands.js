@@ -1,5 +1,14 @@
 export let brands = [
   {
+    name: "HP",
+    color: "#0091cf",
+    photo: "https://example.com/hp.jpg",
+  },
+  {
+    name: "Xiaomi",
+    color: "#ff6900",
+    photo: "https://example.com/xiaomi.jpg",
+  },
     name: "Apple",
     photo: "https://i.postimg.cc/MpxFL1JY/apple.png",
   },
@@ -42,6 +51,5 @@ export let brands = [
   {
     name: "INTEL",
     photo: "https://i.postimg.cc/mZyMw9V4/intel.png",
-  },
-  
+  }, 
 ];
