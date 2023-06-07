@@ -1,0 +1,25 @@
+{
+  "name": "mind-tech-back",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www.js",
+    "data": "node ./models/data/data.js "
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.6",
+    "cors": "^2.8.5",
+    "debug": "~4.3.4",
+    "dotenv": "^16.1.4",
+    "ejs": "~3.1.9",
+    "express": "~4.18.2",
+    "http-errors": "~2.0.0",
+    "mongoose": "^7.2.2",
+    "morgan": "~1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

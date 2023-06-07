@@ -1,0 +1,16 @@
+body {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: black;
+  color: white;
+}
+
+li {
+  padding-bottom: 5px;
+}
+
+a {
+  color: #00b7ff;
+}
