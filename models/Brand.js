@@ -8,7 +8,6 @@ let schema = new Schema({
   },
   color: {
     type: String,
-    required: true,
   },
   photo: {
     type: String,

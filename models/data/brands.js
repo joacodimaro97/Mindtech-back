@@ -1,31 +1,22 @@
 export let brands = [
   {
-    name: "HP",
-    color: "#0091cf",
-    photo: "https://example.com/hp.jpg",
-  },
-  {
-    name: "Xiaomi",
-    color: "#ff6900",
-    photo: "https://example.com/xiaomi.jpg",
-  },
-    name: "Apple",
+    name: "APPLE",
     photo: "https://i.postimg.cc/MpxFL1JY/apple.png",
   },
   {
-    name: "Asus",
+    name: "ASUS",
     photo: "https://i.postimg.cc/m27nV8JD/asus.png",
   },
   {
-    name: "RedMagic",
+    name: "REDMAGIC",
     photo: "https://i.postimg.cc/gJwShD3G/redmagic.png",
   },
   {
-    name: "Samsung",
+    name: "SAMSUNG",
     photo: "https://i.postimg.cc/1z774TnW/samsung.png",
   },
   {
-    name: "Gigabyte",
+    name: "GIGABYTE",
     photo: "https://i.postimg.cc/CxNQpdFp/gigabyte.png",
   },
   {
@@ -33,11 +24,11 @@ export let brands = [
     photo: "https://i.postimg.cc/JhzdrmnD/msi.png",
   },
   {
-    name: "Corsair",
+    name: "CORSAIR",
     photo: "https://i.postimg.cc/QNTYxfXb/corsair.png",
   },
   {
-    name: "Fury",
+    name: "FURY",
     photo: "https://i.postimg.cc/D0LxjwCD/fury.png",
   },
   {
@@ -51,5 +42,5 @@ export let brands = [
   {
     name: "INTEL",
     photo: "https://i.postimg.cc/mZyMw9V4/intel.png",
-  }, 
+  },
 ];

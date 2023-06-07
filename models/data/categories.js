@@ -1,29 +1,23 @@
 export let categories = [
   {
-    name: "Laptops",
+    name: "GRAPHIC CARDS",
   },
   {
-    name: "Smartphones",
+    name: "KEYBOARDS",
   },
   {
-    name: "Graphic cards",
+    name: "MOUSES",
   },
   {
-    name: "Keyboards",
+    name: "MOTHER BOARDS",
   },
   {
-    name: "Mouses",
+    name: "PROCESSORS",
   },
   {
-    name: "Mother boards",
+    name: "MEMORYS RAMS",
   },
   {
-    name: "Processors",
-  },
-  {
-    name: "Memorys RAMS",
-  },
-  {
-    name: "Storages",
+    name: "STORAGES",
   },
 ];

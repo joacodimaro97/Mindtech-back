@@ -10,13 +10,16 @@ import Category from "../Category.js";
 import { brands } from "./brands.js";
 import Brand from "../Brand.js";
 
-import { checkAndInsertData } from "../../utils.js";
-
 async function loadData() {
   try {
-    await checkAndInsertData(User, users, "Users");
-    await checkAndInsertData(Category, categories, "Categories");
-    await checkAndInsertData(Brand, brands, "Brands");
+    await User.insertMany(users);
+    console.log(`\x1b[32m%s\x1b[0m`, `=> Users loaded`);
+
+    await Category.insertMany(categories);
+    console.log(`\x1b[32m%s\x1b[0m`, `=> Categories loaded`);
+
+    await Brand.insertMany(brands);
+    console.log(`\x1b[32m%s\x1b[0m`, `=> Brands loaded`);
 
     for (let product of products) {
       let category = await Category.findOne({ name: product.category });
@@ -29,7 +32,8 @@ async function loadData() {
       }
     }
 
-    await checkAndInsertData(Product, products, "Products");
+    await Product.insertMany(products);
+    console.log(`\x1b[32m%s\x1b[0m`, `=> Products loaded`);
   } catch (error) {
     console.error(
       "\x1b[31m%s\x1b[0m",

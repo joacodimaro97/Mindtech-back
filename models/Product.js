@@ -1,6 +1,6 @@
 import { Schema, model, Types } from "mongoose";
 
-let schema = new Schema(
+const schema = new Schema(
   {
     name: {
       type: String,
@@ -12,7 +12,7 @@ let schema = new Schema(
       required: true,
     },
     images: {
-      type: String,
+      type: [],
       required: true,
     },
     category: {
@@ -39,8 +39,8 @@ let schema = new Schema(
   }
 );
 
-let collection = "products";
+const collection = "products";
 
-let Product = model(collection, schema);
+const Product = model(collection, schema);
 
 export default Product;
