@@ -1,11 +1,11 @@
-import User from "../../models/User.js";
+import Product from "../../models/Product.js";
 
 let read = async (req, res, next) => {
   try {
-    let all = await User.find();
+    let all = await Product.find();
     res.status(200).json({
       GoToBack: "/", 
-      users: all,
+      products: all,
     });
   } catch (error) {
     console.log(error);

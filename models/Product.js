@@ -5,22 +5,30 @@ let schema = new Schema(
     name: {
       type: String,
       required: true,
-    },
-    email: {
-      type: String,
-      required: true,
       unique: true,
     },
-    password: {
+    description: {
       type: String,
       required: true,
     },
-    role: {
+    photo: {
+      type: String,
+      required: true,
+    },
+    category: {
+      type: String,
+      required: true,
+    },
+    brand: {
+      type: String,
+      required: true,
+    },
+    price: {
       type: Number,
       required: true,
     },
-    is_online: {
-      type: Boolean,
+    quantity: {
+      type: Number,
       required: true,
     },
   },
@@ -29,8 +37,8 @@ let schema = new Schema(
   }
 );
 
-let collection = "users";
+let collection = "products";
 
-let User = model(collection, schema);
+let Product = model(collection, schema);
 
-export default User;
+export default Product;
