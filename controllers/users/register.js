@@ -1,6 +1,5 @@
 import User from "../../models/User.js";
 import bcryptjs from "bcryptjs";
-import jwt from "jsonwebtoken";
 import nodemailer from "nodemailer";
 import { renderUrl, viteUrl } from "../../utils.js";
 
@@ -11,16 +10,11 @@ export const register = async (req, res, next) => {
   req.body.is_verified = false;
   req.body.verificationCode = Math.floor(100000 + Math.random() * 900000);
 
-  const token = jwt.sign({ id: req.body.id }, process.env.SECRET, {
-    expiresIn: 60 * 60 * 24,
-  });
-
   try {
     const user = new User(req.body);
     await user.save();
     return res.status(201).json({
-      success: "User registred",
-      token,
+      message: "User registred",
     });
   } catch (error) {
     next(error);
@@ -31,6 +25,10 @@ export const sendVerificationEmail = async (req, res, next) => {
   const { email } = req.params;
 
   const user = await User.findOne({ email });
+
+  if (user.is_verified) {
+    return res.status(400).json({ error: "User is already verified" });
+  }
 
   const transporter = nodemailer.createTransport({
     port: 465,
@@ -148,17 +146,19 @@ export const sendVerificationEmail = async (req, res, next) => {
           `,
     });
 
-    res.status(200).json({ success: "Verification email sent" });
+    res
+      .status(200)
+      .json({ message: "Verification email sent, please check your mailbox" });
   } catch (error) {
-    console.log(error);
-    res.status(500).json({ error: "Failed to send verification email" });
+    next(error);
   }
 };
 
 export const verifyEmail = async (req, res, next) => {
   try {
     const verificationCode = req.query.verificationCode;
-    if (!verificationCode) return res.status(404).json("Verify Code not found");
+    if (!verificationCode)
+      return res.status(404).json({ error: "Verify Code not found" });
 
     const user = await User.findOne({ verificationCode });
 
@@ -168,9 +168,11 @@ export const verifyEmail = async (req, res, next) => {
       await user.save();
 
       return res.redirect(viteUrl);
-    } else res.status(404).json("Mail verification failed, invalid token");
+    } else
+      res
+        .status(404)
+        .json({ error: "Mail verification failed, invalid token" });
   } catch (error) {
-    console.log(error);
-    res.status(500).json(error.message);
+    next(error);
   }
 };
