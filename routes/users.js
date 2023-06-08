@@ -11,7 +11,7 @@ import login from "../controllers/users/login.js";
 import logout from "../controllers/users/logout.js";
 
 router.get("/all", readAll);
-router.get("/:one", readOne);
+router.get("/one", readOne);
 
 router.post("/register", register);
 router.post("/send-verification-email/:email", sendVerificationEmail);

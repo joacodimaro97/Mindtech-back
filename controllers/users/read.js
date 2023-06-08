@@ -4,7 +4,6 @@ export let readAll = async (req, res, next) => {
   try {
     let all = await User.find();
     res.status(200).json({
-      GoToBack: "/",
       users: all,
     });
   } catch (error) {
@@ -15,13 +14,16 @@ export let readAll = async (req, res, next) => {
 
 export let readOne = async (req, res, next) => {
   try {
-    const { email } = req.params;
+    const { one } = req.query;
 
-    let all = await User.findOneAndUpdate({ email });
+    let user = await User.findOne({ email: one });
+
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
 
     res.status(200).json({
-      GoToBack: "/",
-      user: all,
+      user: user,
     });
   } catch (error) {
     console.log(error);

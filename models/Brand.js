@@ -5,9 +5,6 @@ let schema = new Schema({
     type: String,
     required: true,
   },
-  color: {
-    type: String,
-  },
   photo: {
     type: String,
     required: true,

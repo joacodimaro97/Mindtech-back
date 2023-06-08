@@ -4,7 +4,6 @@ export let readAll = async (req, res, next) => {
   try {
     let all = await Product.find();
     res.status(200).json({
-      GoToBack: "/",
       products: all,
     });
   } catch (error) {
@@ -15,13 +14,16 @@ export let readAll = async (req, res, next) => {
 
 export let readOne = async (req, res, next) => {
   try {
-    const { id } = req.params;
+    const { one } = req.query;
 
-    let all = await Product.findOneAndUpdate({ id });
+    let product = await Product.findOne({ _id: one });
+
+    if (!product) {
+      return res.status(404).json({ error: "Product not found" });
+    }
 
     res.status(200).json({
-      GoToBack: "/",
-      product: all,
+      product: product,
     });
   } catch (error) {
     console.log(error);
