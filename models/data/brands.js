@@ -43,4 +43,28 @@ export let brands = [
     name: "INTEL",
     photo: "https://i.postimg.cc/mZyMw9V4/intel.png",
   },
+  {
+    name: "RAZER",
+    photo: "https://i.postimg.cc/k4NF4JTQ/RAZER.png",
+  },
+
+  {
+    name: "STEELSERIES",
+    photo: "https://i.postimg.cc/nzfGpjGV/STEEL.png",
+  },
+
+  {
+    name: "STAR TEC",
+    photo: "https://i.postimg.cc/fyBccHnk/STARTEC.png",
+  },
+
+  {
+    name: "COOLER MASTER",
+    photo: "https://i.postimg.cc/PqwQgzZF/COOLER.png",
+  },
+
+  {
+    name: "DXRACER",
+    photo: "https://i.postimg.cc/1X90VkdL/RACER.png",
+  },
 ];
