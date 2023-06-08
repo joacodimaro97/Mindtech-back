@@ -1,10 +1,10 @@
 import User from "../../models/User.js";
 
-let read = async (req, res, next) => {
+export let readAll = async (req, res, next) => {
   try {
     let all = await User.find();
     res.status(200).json({
-      GoToBack: "/", 
+      GoToBack: "/",
       users: all,
     });
   } catch (error) {
@@ -13,4 +13,18 @@ let read = async (req, res, next) => {
   }
 };
 
-export default read;
+export let readOne = async (req, res, next) => {
+  try {
+    const { email } = req.params;
+
+    let all = await User.findOneAndUpdate({ email });
+
+    res.status(200).json({
+      GoToBack: "/",
+      user: all,
+    });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+};

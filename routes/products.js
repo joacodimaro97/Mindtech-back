@@ -1,8 +1,9 @@
 import { Router } from "express";
 let router = Router();
 
-import read from "../controllers/products/read.js";
+import { readAll, readOne } from "../controllers/products/read.js";
 
-router.get("/", read);
+router.get("/all", readAll);
+router.get("/:one", readOne);
 
 export default router;

@@ -1,7 +1,7 @@
 import { Router } from "express";
 let router = Router();
 
-import read from "../controllers/users/read.js";
+import { readAll, readOne } from "../controllers/users/read.js";
 import {
   register,
   sendVerificationEmail,
@@ -10,7 +10,8 @@ import {
 import login from "../controllers/users/login.js";
 import logout from "../controllers/users/logout.js";
 
-router.get("/", read);
+router.get("/all", readAll);
+router.get("/:one", readOne);
 
 router.post("/register", register);
 router.post("/send-verification-email/:email", sendVerificationEmail);
