@@ -28,8 +28,15 @@ const signin = async (req, res, next) => {
       expiresIn: 60 * 60 * 24,
     });
 
+    const userToSend = {
+      id: user.id,
+      email: user.email,
+      name: user.name,
+    };
+
     return res.status(200).json({
       message: "User logged in",
+      user: userToSend,
       token,
     });
   } catch (error) {
