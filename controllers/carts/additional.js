@@ -64,7 +64,7 @@ export const addProduct = async (req, res, next) => {
     }
 
     const existingProduct = cart.products.find(
-      (product) => product.product.toString() === productID
+      (product) => product.product_id.toString() === productID
     );
 
     const product = await Product.findById(productID);
@@ -77,7 +77,8 @@ export const addProduct = async (req, res, next) => {
       existingProduct.subtotal = existingProduct.quantity * product.price;
     } else {
       cart.products.push({
-        product: productID,
+        product_id: productID,
+        name: product.name,
         quantity: 1,
         subtotal: product.price,
       });
@@ -107,7 +108,7 @@ export const delProduct = async (req, res, next) => {
     }
 
     const existingProductIndex = cart.products.findIndex(
-      (product) => product.product.toString() === productID
+      (product) => product.product_id.toString() === productID
     );
 
     if (existingProductIndex !== -1) {
