@@ -215,7 +215,7 @@ export let products = [
     description:
       "NVIDIA® GeForce RTX™ 40 Series GPUs are beyond fast for gamers and creators. They're powered by the ultra-efficient NVIDIA Ada Lovelace architecture that delivers a quantum leap in both performance and AI-powered graphics. Experience realistic virtual worlds with ray tracing and ultra-high FPS gaming with the lowest latency. Discover revolutionary new ways to create and unprecedented workflow acceleration.",
     images: [
-      'https://i.postimg.cc/DZBVdQxm/card-removebg-preview-16.png',
+      'https://i.postimg.cc/zGQ2VNgT/card-removebg-preview-16.png',
       'https://i.postimg.cc/nrzydsW2/carru1-removebg-preview-15.png',
       'https://i.postimg.cc/hv5HNDWB/carru2-removebg-preview-15.png'
     ],
