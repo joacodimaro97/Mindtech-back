@@ -13,10 +13,14 @@ const schema = new Schema(
     },
     products: [
       {
-        product: {
+        product_id: {
           type: Types.ObjectId,
           ref: "Product",
           required: true,
+        },
+        name: {
+          type: String,
+          ref: "Product",
         },
         quantity: {
           type: Number,
