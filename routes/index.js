@@ -6,6 +6,8 @@ import productsRouter from "./products.js";
 import categoriesRouter from "./categories.js";
 import brandsRouter from "./brands.js";
 import paymentsRouter from "./payments.js"
+import cartsRouter from "./carts.js";
+
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
@@ -20,5 +22,6 @@ router.use("/products", productsRouter);
 router.use('/payments', paymentsRouter)
 router.use("/categories", categoriesRouter);
 router.use("/brands", brandsRouter);
+router.use("/carts", cartsRouter);
 
 export default router;

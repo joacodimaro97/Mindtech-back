@@ -13,6 +13,7 @@ import create from '../controllers/products/create.js'
 import updateProduct from "../controllers/products/update.js";
 import { rating } from "../controllers/products/additional.js";
 
+
 router.get("/all", readAll);
 router.get("/one", readOne);
 router.post("/create", create)

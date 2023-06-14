@@ -4,7 +4,6 @@ let read = async (req, res, next) => {
   try {
     let all = await Brand.find();
     res.status(200).json({
-      GoToBack: "/",
       brands: all,
     });
   } catch (error) {
