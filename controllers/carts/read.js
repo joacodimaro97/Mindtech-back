@@ -16,7 +16,7 @@ export let readOne = async (req, res, next) => {
   try {
     const { one } = req.query;
 
-    let cart = await Cart.findOne({ user: one });
+    let cart = await Cart.findOne({ email: one });
 
     if (!cart) {
       return res.status(404).json({ error: "cart not found" });
