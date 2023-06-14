@@ -113,6 +113,8 @@ export const addProduct = async (req, res, next) => {
       cart.products.push({
         product_id: productID,
         name: product.name,
+        images: product.images[0],
+        price: product.price,
         quantity: 1,
         subtotal: product.price,
       });

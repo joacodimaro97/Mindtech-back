@@ -22,6 +22,14 @@ const schema = new Schema(
           type: String,
           ref: "Product",
         },
+        price: {
+          type: Number,
+          required: true,
+        },
+        images: {
+          type: String,
+          required: true,
+        },
         quantity: {
           type: Number,
           required: true,
