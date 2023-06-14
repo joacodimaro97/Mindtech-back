@@ -28,6 +28,11 @@ const schema = new Schema(
     verificationCode: {
       type: Number,
     },
+    userCount : {
+      type: Number,
+      default: 0,
+      required: false
+    }
   },
   {
     timestamps: true,
