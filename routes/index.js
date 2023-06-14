@@ -5,6 +5,7 @@ import usersRouter from "./users.js";
 import productsRouter from "./products.js";
 import categoriesRouter from "./categories.js";
 import brandsRouter from "./brands.js";
+import paymentsRouter from "./payments.js"
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
@@ -16,6 +17,7 @@ router.get("/", function (req, res, next) {
 
 router.use("/users", usersRouter);
 router.use("/products", productsRouter);
+router.use('/payments', paymentsRouter)
 router.use("/categories", categoriesRouter);
 router.use("/brands", brandsRouter);
 

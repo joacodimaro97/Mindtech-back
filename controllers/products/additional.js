@@ -90,3 +90,25 @@ export const searchByBrand = async (req, res, next) => {
     next(error);
   }
 };
+
+
+
+export const rating = async (req, res, next) => {
+  const { _id } = req.body;
+console.log(_id)
+  try {
+    const product = await Product.findById(
+      { _id: _id }   
+  );
+
+    if (!product) {
+      return res.status(404).json({ message: 'Product not found' });
+    }
+    product.rating++;
+    await product.save();
+
+    res.status(200).json({ message: 'Rating saved correctly' });
+  } catch (error) {
+    next(error);
+  }
+};

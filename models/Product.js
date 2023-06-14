@@ -36,6 +36,11 @@ const schema = new Schema(
       type: Number,
       required: true,
     },
+    rating: {
+      type: Number,
+      default: 0,
+      required: false
+    }
   },
   {
     timestamps: true,

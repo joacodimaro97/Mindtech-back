@@ -10,11 +10,14 @@ import {
 } from "../controllers/products/additional.js";
 import {deleteProducts} from '../controllers/products/delete.js'
 import create from '../controllers/products/create.js'
+import updateProduct from "../controllers/products/update.js";
+import { rating } from "../controllers/products/additional.js";
 
 router.get("/all", readAll);
 router.get("/one", readOne);
 router.post("/create", create)
-//es get apra crear no???
+router.put("/update/:id", updateProduct)
+router.post("/rating", rating)
 router.delete("/delete", deleteProducts)
 
 router.get("/paginate", paginateProducts);

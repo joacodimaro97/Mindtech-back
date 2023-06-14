@@ -12,9 +12,11 @@ export const register = async (req, res, next) => {
 
   try {
     const user = new User(req.body);
+    user.userCount++;
     await user.save();
     return res.status(201).json({
       message: "User registred",
+      
     });
   } catch (error) {
     next(error);
