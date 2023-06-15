@@ -24,15 +24,16 @@ const schema = new Schema(
     },
     is_verified: {
       type: Boolean,
+      required: true,
     },
     verificationCode: {
       type: Number,
     },
-    userCount : {
+    userCount: {
       type: Number,
       default: 0,
-      required: false
-    }
+      required: false,
+    },
   },
   {
     timestamps: true,

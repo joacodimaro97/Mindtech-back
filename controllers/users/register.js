@@ -16,7 +16,6 @@ export const register = async (req, res, next) => {
     await user.save();
     return res.status(201).json({
       message: "User registred",
-      
     });
   } catch (error) {
     next(error);
@@ -24,7 +23,7 @@ export const register = async (req, res, next) => {
 };
 
 export const sendVerificationEmail = async (req, res, next) => {
-  const { email } = req.params;
+  const { email } = req.body;
 
   const user = await User.findOne({ email });
 
@@ -169,7 +168,7 @@ export const verifyEmail = async (req, res, next) => {
 
       await user.save();
 
-      return res.redirect(viteUrl);
+      return res.redirect(viteUrl + "auth-form");
     } else
       res
         .status(404)
