@@ -21,7 +21,7 @@ router.get("/all", readAll);
 router.get("/one", readOne);
 
 router.post("/register", validator(registerSchema), register);
-router.post("/send-verification-email/:email", sendVerificationEmail);
+router.post("/send-verification-email", sendVerificationEmail);
 router.get("/verify-mail", verifyEmail);
 
 router.post("/login", validator(loginSchema), login);

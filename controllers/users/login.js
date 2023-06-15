@@ -16,6 +16,12 @@ const signin = async (req, res, next) => {
 
     const isPasswordValid = await bcryptjs.compare(password, user.password);
 
+    if (!user.is_verified) {
+      return res.status(401).json({
+        message: "Your account is not verified, check your email and verify it",
+      });
+    }
+
     if (!isPasswordValid) {
       return res.status(401).json({
         message: "Invalid password",

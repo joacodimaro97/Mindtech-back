@@ -5,6 +5,7 @@ export let users = [
     password: "$2a$10$n3x6FaMOzrJyFXP8mEgIoub0pk.LuVDpfRA0tWwpx2jlCcHSyBmoS",
     role: 1,
     is_online: true,
+    is_verified: true,
   },
   {
     name: "Denise Aguirre",
@@ -12,6 +13,7 @@ export let users = [
     password: "$2a$10$n3x6FaMOzrJyFXP8mEgIoub0pk.LuVDpfRA0tWwpx2jlCcHSyBmoS",
     role: 1,
     is_online: true,
+    is_verified: true,
   },
   {
     name: "Joaquin Dimaro",
@@ -19,6 +21,7 @@ export let users = [
     password: "$2a$10$n3x6FaMOzrJyFXP8mEgIoub0pk.LuVDpfRA0tWwpx2jlCcHSyBmoS",
     role: 1,
     is_online: true,
+    is_verified: true,
   },
   {
     name: "Jorge Orozco",
@@ -26,6 +29,7 @@ export let users = [
     password: "$2a$10$n3x6FaMOzrJyFXP8mEgIoub0pk.LuVDpfRA0tWwpx2jlCcHSyBmoS",
     role: 1,
     is_online: true,
+    is_verified: true,
   },
   {
     name: "Joel Dimato",
@@ -33,6 +37,7 @@ export let users = [
     password: "$2a$10$n3x6FaMOzrJyFXP8mEgIoub0pk.LuVDpfRA0tWwpx2jlCcHSyBmoS",
     role: 1,
     is_online: true,
+    is_verified: true,
   },
   {
     name: "Test Test",
@@ -40,5 +45,6 @@ export let users = [
     password: "$2a$10$n3x6FaMOzrJyFXP8mEgIoub0pk.LuVDpfRA0tWwpx2jlCcHSyBmoS",
     role: 0,
     is_online: true,
+    is_verified: true,
   },
 ];
