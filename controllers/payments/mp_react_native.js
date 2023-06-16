@@ -1,6 +1,7 @@
 import mercadopago from "mercadopago";
 import { v4 as uuidv4 } from "uuid";
 const uniqueID = uuidv4();
+import {viteUrl} from "../../utils.js"
 
 const dolar_price = 487
 
