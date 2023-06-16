@@ -1,4 +1,8 @@
 import mercadopago from "mercadopago";
+import { v4 as uuidv4 } from "uuid";
+const uniqueID = uuidv4();
+
+const dolar_price = 487
 
 const mp_react_native = async (req, res, next) => {
   mercadopago.configure({ access_token: process.env.ACCESS_TOKEN });
@@ -8,8 +12,9 @@ const mp_react_native = async (req, res, next) => {
   const preference = {
     items: [
       {
+        id: uniqueID,
         title: "Payment",
-        unit_price: parseFloat(unit_price),
+        unit_price: parseFloat(unit_price*dolar_price),
         quantity: 1,
       },
     ],
