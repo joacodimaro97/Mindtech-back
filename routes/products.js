@@ -12,14 +12,15 @@ import {deleteProducts} from '../controllers/products/delete.js'
 import create from '../controllers/products/create.js'
 import updateProduct from "../controllers/products/update.js";
 import { rating } from "../controllers/products/additional.js";
-<<<<<<< HEAD
-=======
+import validator from "../middlewares/validator.js";
+import productExists from "../middlewares/productExists.js";
+import verifiedRole from '../middlewares/admin.js'
+import productSchema from "../schemas/product.js";
 
->>>>>>> 2222b088c0e6cb1dfa2fb04081cded539a47852f
 
 router.get("/all", readAll);
 router.get("/one", readOne);
-router.post("/create", create)
+router.post("/create", verifiedRole ,productExists ,validator(productSchema) ,create)
 router.put("/update/:id", updateProduct)
 router.post("/rating", rating)
 router.delete("/delete", deleteProducts)
