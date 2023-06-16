@@ -1,6 +1,7 @@
 import mercadopago from "mercadopago";
 import { v4 as uuidv4 } from "uuid";
 const uniqueID = uuidv4();
+import {viteUrl} from "../../utils.js"
 
 const dolar_price = 487
 
@@ -19,9 +20,9 @@ const mp_react_native = async (req, res, next) => {
       },
     ],
     back_urls: {
-      success: `${VITE_API}success`,
-      failure: `${VITE_API}failure`,
-      pending: `${VITE_API}pending`,
+      success: `${viteUrl}success`,
+      failure: `${viteUrl}failure`,
+      pending: `${viteUrl}pending`,
     },
     auto_return: "approved",
     binary_mode: true,
