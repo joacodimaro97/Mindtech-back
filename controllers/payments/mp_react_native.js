@@ -19,9 +19,9 @@ const mp_react_native = async (req, res, next) => {
       },
     ],
     back_urls: {
-      success: `${VITE_API}success`,
-      failure: `${VITE_API}failure`,
-      pending: `${VITE_API}pending`,
+      success: `${viteUrl}`,
+      failure: `${viteUrl}`,
+      pending: `${viteUrl}`,
     },
     auto_return: "approved",
     binary_mode: true,
