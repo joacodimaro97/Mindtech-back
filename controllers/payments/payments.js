@@ -1,11 +1,12 @@
 import mercadopago from "mercadopago";
+import nodemailer from "nodemailer";
 
 const payments = async (req, res, next) => {
   mercadopago.configure({ access_token: process.env.ACCESS_TOKEN });
 
   try {
     const { unit_price } = req.body;
-
+    console.log(unit_price)
     const preference = {
       items: [
         {
@@ -32,9 +33,11 @@ const payments = async (req, res, next) => {
   } catch (error) {
     console.log(error);
     res.status(500).json({
-      error: "Oops! An error occurred while creating the donation preference.",
+      error:
+        "Oops! An error occurred while creating the donation preference.",
     });
   }
 };
 
 export default payments;
+
