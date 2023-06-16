@@ -19,9 +19,9 @@ const mp_react_native = async (req, res, next) => {
       },
     ],
     back_urls: {
-      success: "http://localhost:5173",
-      failure: "http://localhost:5173",
-      pending: "http://localhost:5173",
+      success: `${VITE_API}success`,
+      failure: `${VITE_API}failure`,
+      pending: `${VITE_API}pending`,
     },
     auto_return: "approved",
     binary_mode: true,
